@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -13,6 +16,7 @@ public class FrameVectores extends javax.swing.JFrame {
     /**
      * Creates new form FrameVectores
      */
+    double v[];
     public FrameVectores() {
         initComponents();
     }
@@ -56,6 +60,12 @@ public class FrameVectores extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Longitud:");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+
+        txtLongitud.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtLongitudKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtLongitud, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 80, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 240, 70));
@@ -64,18 +74,43 @@ public class FrameVectores extends javax.swing.JFrame {
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         cmbCrear.setText("Crear");
+        cmbCrear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbCrearActionPerformed(evt);
+            }
+        });
         jPanel3.add(cmbCrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 100, -1));
 
         cmbLlenarManual.setText("Llenar Manual");
+        cmbLlenarManual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbLlenarManualActionPerformed(evt);
+            }
+        });
         jPanel3.add(cmbLlenarManual, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 100, -1));
 
         cmbLlenarAutom.setText("Llenar Autom");
+        cmbLlenarAutom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbLlenarAutomActionPerformed(evt);
+            }
+        });
         jPanel3.add(cmbLlenarAutom, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 100, -1));
 
         cmbMostrar.setText("Mostrar");
+        cmbMostrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbMostrarActionPerformed(evt);
+            }
+        });
         jPanel3.add(cmbMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 100, -1));
 
         cmbBorrar.setText("Borrar");
+        cmbBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbBorrarActionPerformed(evt);
+            }
+        });
         jPanel3.add(cmbBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 100, -1));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, 130, 190));
@@ -83,6 +118,7 @@ public class FrameVectores extends javax.swing.JFrame {
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Resultado", 0, 0, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        txtResultado.setEditable(false);
         txtResultado.setColumns(20);
         txtResultado.setRows(5);
         jScrollPane1.setViewportView(txtResultado);
@@ -95,6 +131,75 @@ public class FrameVectores extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cmbCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbCrearActionPerformed
+        // TODO add your handling code here:
+        int longitud;
+        if (txtLongitud.getText().trim().isEmpty())
+        {
+            JOptionPane.showMessageDialog(this, "Ingrese la Longitud", "ERROR", JOptionPane.ERROR_MESSAGE);
+            txtLongitud.requestFocusInWindow();
+        }
+        else if(Integer.parseInt(txtLongitud.getText().trim())==0)
+        {
+            JOptionPane.showMessageDialog(this, "La Longitud no puede ser cero", "ERROR", JOptionPane.ERROR_MESSAGE);
+            txtLongitud.requestFocusInWindow();
+            txtLongitud.selectAll();
+        }
+        else 
+        {
+            longitud= Integer.parseInt(txtLongitud.getText().trim());
+            v= new double [longitud];
+            JOptionPane.showMessageDialog(this, "Vector creado Exitosamente");
+        }
+    }//GEN-LAST:event_cmbCrearActionPerformed
+
+    private void txtLongitudKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLongitudKeyTyped
+        // TODO add your handling code here:
+        char c=evt.getKeyChar(); 
+          if(!Character.isDigit(c)) { 
+              getToolkit().beep(); 
+              evt.consume(); 
+          } 
+    }//GEN-LAST:event_txtLongitudKeyTyped
+
+    private void cmbLlenarManualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbLlenarManualActionPerformed
+        // TODO add your handling code here:
+        double n;
+        for (int i = 0; i < v.length; i++) 
+        {
+            n= Double.parseDouble(JOptionPane.showInputDialog(this, "Digite el elemento en la posicion"+ i));
+            v[i]=n;
+        }
+        
+    }//GEN-LAST:event_cmbLlenarManualActionPerformed
+
+    private void cmbMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbMostrarActionPerformed
+        // TODO add your handling code here:
+        for (int i = 0; i < v.length; i++) 
+        {
+            txtResultado.append(v[i]+"\n");
+            
+        }
+    }//GEN-LAST:event_cmbMostrarActionPerformed
+
+    private void cmbBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbBorrarActionPerformed
+        // TODO add your handling code here:
+        txtLongitud.setText("");
+        txtResultado.setText("");
+        txtLongitud.requestFocusInWindow();
+        v= null;
+    }//GEN-LAST:event_cmbBorrarActionPerformed
+
+    private void cmbLlenarAutomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbLlenarAutomActionPerformed
+        // TODO add your handling code here:
+        double n;
+        for (int i = 0; i < v.length; i++) 
+        {
+            n= (int)(Math.random()* 50 + 1);
+            v[i]=n;
+        }
+    }//GEN-LAST:event_cmbLlenarAutomActionPerformed
 
     /**
      * @param args the command line arguments
