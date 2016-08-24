@@ -1,4 +1,5 @@
 
+import java.math.BigDecimal;
 import javax.swing.JOptionPane;
 
 /*
@@ -41,6 +42,10 @@ public class FrameVectores extends javax.swing.JFrame {
         cmbLlenarAutom = new javax.swing.JButton();
         cmbMostrar = new javax.swing.JButton();
         cmbBorrar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtResultado = new javax.swing.JTextArea();
@@ -54,7 +59,7 @@ public class FrameVectores extends javax.swing.JFrame {
         jLabel1.setText("MANEJO DE VECTORES.");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, -1, -1));
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos Iniciales", 0, 0, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos Iniciales", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -70,7 +75,7 @@ public class FrameVectores extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 240, 70));
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Opciones", 0, 0, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Opciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         cmbCrear.setText("Crear");
@@ -113,9 +118,42 @@ public class FrameVectores extends javax.swing.JFrame {
         });
         jPanel3.add(cmbBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 100, -1));
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, 130, 190));
+        jButton1.setText("Suma");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(9, 170, 100, -1));
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Resultado", 0, 0, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
+        jButton2.setText("Multiplicacion");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 100, -1));
+
+        jButton3.setText("Mayor");
+        jButton3.setToolTipText("");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 100, -1));
+
+        jButton4.setText("Menor");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 100, -1));
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, 130, 290));
+
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Resultado", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtResultado.setEditable(false);
@@ -127,7 +165,7 @@ public class FrameVectores extends javax.swing.JFrame {
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 260, 160));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 400));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 400));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -168,7 +206,7 @@ public class FrameVectores extends javax.swing.JFrame {
         double n;
         for (int i = 0; i < v.length; i++) 
         {
-            n= Double.parseDouble(JOptionPane.showInputDialog(this, "Digite el elemento en la posicion"+ i));
+            n= Double.parseDouble(JOptionPane.showInputDialog(this, "Digite el elemento en la posicion"));
             v[i]=n;
         }
         
@@ -200,6 +238,58 @@ public class FrameVectores extends javax.swing.JFrame {
             v[i]=n;
         }
     }//GEN-LAST:event_cmbLlenarAutomActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        double suma=0;
+        
+        for (int i = 0; i < v.length; i++) {
+            suma= suma + v[i];
+        }
+            txtResultado.append("Sumatoria igual:"+ suma+ "\n");
+            
+            
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        double multiplicacion=1;
+        
+        for (int i = 0; i < v.length; i++) {
+            multiplicacion = multiplicacion* v[i];
+        }
+            txtResultado.append("Multiplcacion"+ new BigDecimal(multiplicacion));
+            
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        double mayor=0;
+        
+        for (int i = 0; i < v.length; i++) {
+            if (v[i]> mayor)
+            {
+               mayor=v[i];
+            }
+        }
+        txtResultado.append("Numero Mayor:"+ mayor+"\n");
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        double menor=50;
+        
+        for (int i = 0; i < v.length; i++) 
+        {
+            if (v[i]<menor)
+            {
+            menor= v[i];    
+            }
+        }
+        txtResultado.append("Numero menor:"+ menor+"\n");
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -242,6 +332,10 @@ public class FrameVectores extends javax.swing.JFrame {
     private javax.swing.JButton cmbLlenarAutom;
     private javax.swing.JButton cmbLlenarManual;
     private javax.swing.JButton cmbMostrar;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
