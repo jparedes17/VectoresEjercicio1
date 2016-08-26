@@ -42,10 +42,10 @@ public class FrameVectores extends javax.swing.JFrame {
         cmbLlenarAutom = new javax.swing.JButton();
         cmbMostrar = new javax.swing.JButton();
         cmbBorrar = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        cmbSuma = new javax.swing.JButton();
+        cmbMultiplicacion = new javax.swing.JButton();
+        cmbMayor = new javax.swing.JButton();
+        cmbMenor = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtResultado = new javax.swing.JTextArea();
@@ -118,38 +118,38 @@ public class FrameVectores extends javax.swing.JFrame {
         });
         jPanel3.add(cmbBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 100, -1));
 
-        jButton1.setText("Suma");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        cmbSuma.setText("Suma");
+        cmbSuma.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                cmbSumaActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(9, 170, 100, -1));
+        jPanel3.add(cmbSuma, new org.netbeans.lib.awtextra.AbsoluteConstraints(9, 170, 100, -1));
 
-        jButton2.setText("Multiplicacion");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        cmbMultiplicacion.setText("Multiplicacion");
+        cmbMultiplicacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                cmbMultiplicacionActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 100, -1));
+        jPanel3.add(cmbMultiplicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 100, -1));
 
-        jButton3.setText("Mayor");
-        jButton3.setToolTipText("");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        cmbMayor.setText("Mayor");
+        cmbMayor.setToolTipText("");
+        cmbMayor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                cmbMayorActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 100, -1));
+        jPanel3.add(cmbMayor, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 100, -1));
 
-        jButton4.setText("Menor");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        cmbMenor.setText("Menor");
+        cmbMenor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                cmbMenorActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 100, -1));
+        jPanel3.add(cmbMenor, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 100, -1));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, 130, 290));
 
@@ -239,7 +239,7 @@ public class FrameVectores extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_cmbLlenarAutomActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void cmbSumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbSumaActionPerformed
         // TODO add your handling code here:
         double suma=0;
         
@@ -250,9 +250,9 @@ public class FrameVectores extends javax.swing.JFrame {
             
             
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_cmbSumaActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void cmbMultiplicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbMultiplicacionActionPerformed
         // TODO add your handling code here:
         double multiplicacion=1;
         
@@ -262,9 +262,9 @@ public class FrameVectores extends javax.swing.JFrame {
             txtResultado.append("Multiplcacion"+ new BigDecimal(multiplicacion));
             
         
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_cmbMultiplicacionActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void cmbMayorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbMayorActionPerformed
         // TODO add your handling code here:
         double mayor=0;
         
@@ -275,9 +275,9 @@ public class FrameVectores extends javax.swing.JFrame {
             }
         }
         txtResultado.append("Numero Mayor:"+ mayor+"\n");
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_cmbMayorActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void cmbMenorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbMenorActionPerformed
         // TODO add your handling code here:
         double menor=50;
         
@@ -289,7 +289,7 @@ public class FrameVectores extends javax.swing.JFrame {
             }
         }
         txtResultado.append("Numero menor:"+ menor+"\n");
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_cmbMenorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -331,11 +331,11 @@ public class FrameVectores extends javax.swing.JFrame {
     private javax.swing.JButton cmbCrear;
     private javax.swing.JButton cmbLlenarAutom;
     private javax.swing.JButton cmbLlenarManual;
+    private javax.swing.JButton cmbMayor;
+    private javax.swing.JButton cmbMenor;
     private javax.swing.JButton cmbMostrar;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton cmbMultiplicacion;
+    private javax.swing.JButton cmbSuma;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
